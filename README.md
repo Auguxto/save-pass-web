@@ -1,5 +1,9 @@
 # Save Pass
 
+[Dribbble Author Design](https://dribbble.com/shots/13907643-Bitwarden-Design-Concept-for-macOS)
+
+[Figma](https://www.figma.com/file/4b9RxDuu2WrWb94gjXydbe/savePass?node-id=1%3A2)
+
 ### Login page
 ![screencapture-localhost-3001-login-2021-10-10-20_37_24](https://user-images.githubusercontent.com/62861636/136716569-399d76bf-f959-4356-b437-72e4b5de79d2.png)
 
