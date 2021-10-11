@@ -7,7 +7,10 @@ export const Container = styled.div`
   display: flex;
   flex: 1;
 
-  height: 100vh;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100vh;
 
   align-items: center;
   justify-content: center;
@@ -22,12 +25,25 @@ export const Form = styled.div`
 
   align-items: center;
 
-  width: 600px;
-  height: 700px;
+  width: auto;
+  max-width: 600px;
+  min-width: 31.2%;
+  height: auto;
+  min-height: 75%;
+
+  z-index: 1;
 
   background: #282828;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+
+  @media (max-width: 420px) {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+
+    border-radius: 0px;
+  }
 `;
 
 export const Title = styled.p`
@@ -47,7 +63,7 @@ export const InputsContainer = styled.div`
 
   flex-direction: column;
 
-  margin-top: 186px;
+  margin-top: 29%;
 `;
 
 export const Input = styled.input`
@@ -189,4 +205,6 @@ export const CreateAccount = styled(Link)`
   text-decoration: none;
 
   color: #165ddb;
+
+  margin: 10px 0;
 `;

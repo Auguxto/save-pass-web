@@ -7,7 +7,10 @@ export const Container = styled.div`
   display: flex;
   flex: 1;
 
-  height: 100vh;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100vh;
 
   align-items: center;
   justify-content: center;
@@ -22,12 +25,23 @@ export const Form = styled.div`
 
   align-items: center;
 
-  width: 600px;
-  height: 700px;
+  width: auto;
+  max-width: 600px;
+  min-width: 31.2%;
+  height: auto;
+  min-height: 75%;
 
   background: #282828;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+
+  @media (max-width: 420px) {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+
+    border-radius: 0px;
+  }
 `;
 
 export const Title = styled.p`
@@ -97,7 +111,7 @@ export const ButtonsContainer = styled.div`
 
   flex-direction: column;
 
-  margin-top: 50px;
+  margin: 30px 0;
 `;
 
 export const SigninButton = styled.button`
@@ -147,7 +161,7 @@ export const GoogleSigninButton = styled.div`
   border: none;
   border-radius: 10px;
 
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
   cursor: pointer;
 
