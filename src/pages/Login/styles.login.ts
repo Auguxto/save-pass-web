@@ -66,6 +66,57 @@ export const InputsContainer = styled.div`
   margin-top: 29%;
 `;
 
+export const InputGroupContainer = styled.div`
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 60px;
+
+  background: #404040;
+
+  border-radius: 10px;
+
+  margin-bottom: 20px;
+`;
+
+export const InputGroupButton = styled.button`
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 10px;
+
+  background: transparent;
+
+  border: none;
+
+  cursor: pointer;
+`;
+
+export const InputGroup = styled.input`
+  width: 100%;
+
+  height: 60px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #404040;
+
+  padding: 0 10px;
+
+  font-family: Roboto;
+  font-size: 16px;
+
+  color: #797979;
+`;
+
 export const Input = styled.input`
   width: 100%;
 
@@ -76,9 +127,9 @@ export const Input = styled.input`
   border: none;
   border-radius: 10px;
 
-  padding-left: 10px;
+  padding: 0 10px;
 
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 
   font-family: Roboto;
   font-size: 16px;
@@ -206,5 +257,5 @@ export const CreateAccount = styled(Link)`
 
   color: #165ddb;
 
-  margin: 10px 0;
+  margin: 20px 0;
 `;

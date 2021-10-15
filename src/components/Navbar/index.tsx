@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import { useState, useContext } from "react";
 import { FiShield, FiStar, FiTrash2, FiPlus, FiLogOut } from "react-icons/fi";
+import { UserContext } from "../../contexts/UserContext";
 
 import * as S from "./styles.navbar";
 
 const Navbar = () => {
   const [filter, setFilter] = useState("all");
+
+  const { setUser } = useContext(UserContext);
 
   return (
     <S.Navbar>
@@ -66,7 +69,7 @@ const Navbar = () => {
           <FiPlus color="#9F9F9F" size={30} />
           New folder
         </S.NewFolder>
-        <S.Logout>
+        <S.Logout onClick={() => setUser(undefined)}>
           <FiLogOut color="#9F9F9F" size={30} />
           Logout
         </S.Logout>
