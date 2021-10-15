@@ -1,14 +1,9 @@
-import {
-  createContext,
-  Dispatch,
-  ReactNode,
-  SetStateAction,
-  useState,
-} from "react";
+import { createContext, ReactNode, useState } from "react";
 
 type TUserContext = {
   user?: string;
-  setUser: Dispatch<SetStateAction<string | undefined>>;
+  handleLogin: (user: string) => void;
+  handleLogout: () => void;
 };
 
 export const UserContext = createContext({} as TUserContext);
@@ -20,8 +15,17 @@ type TUserProcider = {
 export const UserProvider = ({ children }: TUserProcider) => {
   const [user, setUser] = useState<string>();
 
+  function handleLogin(user: string) {
+    setUser(user);
+  }
+
+  function handleLogout() {
+    setUser(undefined);
+    localStorage.removeItem("token");
+  }
+
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, handleLogin, handleLogout }}>
       {children}
     </UserContext.Provider>
   );

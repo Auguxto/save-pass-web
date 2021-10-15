@@ -31,19 +31,26 @@ const Login = ({ location }: LoginProps) => {
   const [rememberMe, toggleRememberMe] = useReducer((s) => !s, false);
   const [viewPassword, toggleViewPassword] = useReducer((s) => !s, false);
 
-  const { user, setUser } = useContext(UserContext);
+  const { user, handleLogin } = useContext(UserContext);
 
   const [createSession] = useMutation<CreateSessionData, CreateSessionVars>(
     CREATE_SESSION,
     {
       variables: { email, password },
+      errorPolicy: "ignore",
       onCompleted: (data) => {
-        setUser(data.createSession.token);
+        handleLogin(data.createSession.token);
         if (rememberMe) localStorage.setItem("token", data.createSession.token);
-        console.log(data.createSession.token);
       },
     }
   );
+
+  useEffect(() => {
+    const localUser = localStorage.getItem("token");
+    if (localUser) {
+      handleLogin(localUser);
+    }
+  }, []);
 
   useEffect(() => {
     if (user) {

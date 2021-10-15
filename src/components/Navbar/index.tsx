@@ -7,7 +7,7 @@ import * as S from "./styles.navbar";
 const Navbar = () => {
   const [filter, setFilter] = useState("all");
 
-  const { setUser } = useContext(UserContext);
+  const { handleLogout } = useContext(UserContext);
 
   return (
     <S.Navbar>
@@ -69,7 +69,7 @@ const Navbar = () => {
           <FiPlus color="#9F9F9F" size={30} />
           New folder
         </S.NewFolder>
-        <S.Logout onClick={() => setUser(undefined)}>
+        <S.Logout onClick={handleLogout}>
           <FiLogOut color="#9F9F9F" size={30} />
           Logout
         </S.Logout>
